@@ -1,4 +1,4 @@
- def call(image, sudo = true) {
+ def call(image, sudo = false) {
     tagBeta = "${currentBuild.displayName}-${env.BRANCH_NAME}"
     prefix = ""
     if (sudo) {
