@@ -13,7 +13,7 @@
         ${image}:${tagBeta} \
         ${image}:latest"""
     withCredentials([usernamePassword(
-        credentialsId: "docker",
+        credentialsId: "dockerhub",
         usernameVariable: "USER",
         passwordVariable: "PASS"
     )]) {

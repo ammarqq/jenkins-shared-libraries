@@ -1,6 +1,6 @@
 def call() {
     withCredentials([usernamePassword(
-            credentialsId: "dh-docker-flow",
+            credentialsId: "dockerhub",
             usernameVariable: "USER",
             passwordVariable: "PASS"
     )]) {

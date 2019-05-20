@@ -1,4 +1,4 @@
-def call(tag, sudo = true, extratags = []) {
+def call(tag, sudo = false, extratags = []) {
 
     prefix = ""
     if (sudo) {
@@ -6,7 +6,7 @@ def call(tag, sudo = true, extratags = []) {
     }
 
     withCredentials([usernamePassword(
-            credentialsId: "docker",
+            credentialsId: "dockerhub",
             usernameVariable: "USER",
             passwordVariable: "PASS"
     )]) {

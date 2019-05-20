@@ -1,4 +1,4 @@
-def call(image, sudo = true, tag, extraTags = []) {
+def call(image, sudo = false, tag, extraTags = []) {
 
     prefix = ""
     if (sudo) {
@@ -8,7 +8,7 @@ def call(image, sudo = true, tag, extraTags = []) {
         -t ${image}:${tag} ."""
 
     withCredentials([usernamePassword(
-            credentialsId: "docker",
+            credentialsId: "dockerhub",
             usernameVariable: "USER",
             passwordVariable: "PASS"
     )]) {

@@ -1,4 +1,4 @@
-def call(image, sudo = true) {
+def call(image, sudo = false) {
     tagBeta = "${currentBuild.displayName}-${env.BRANCH_NAME}"
     prefix = ""
     if (sudo) {
@@ -7,7 +7,7 @@ def call(image, sudo = true) {
     sh """${prefix}docker image build \
         -t ${image}:${tagBeta} ."""
     withCredentials([usernamePassword(
-        credentialsId: "docker",
+        credentialsId: "dockerhub",
         usernameVariable: "USER",
         passwordVariable: "PASS"
     )]) {
