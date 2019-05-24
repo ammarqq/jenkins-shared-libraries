@@ -7,6 +7,7 @@ def call(project, domain, extraValues = "") {
         helm/${project} -i \
         --tiller-namespace ${project}-build \
         --set image.tag=${tagBeta} \
+        --set image=${image} \
         --set ingress.host=${addr.toLowerCase()} \
         ${extraValues}"""
 }
