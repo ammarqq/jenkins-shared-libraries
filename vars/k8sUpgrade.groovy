@@ -6,5 +6,7 @@ def call(project, addr) {
         --namespace ${project} \
         --set image.tag=${currentBuild.displayName} \
         --set ingress.host=${addr} \
+        --set image.image=${image} \
+        --set image.dbTag=3.3 \
         --reuse-values"""
 }
